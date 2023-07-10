@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PlayersController;
+use App\Http\Controllers\TeamsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +24,10 @@ Route::controller(PlayersController::class)->group(function () {
     Route::get('/players', 'index')->name('list_players');
     Route::post('/players', 'create')->name('create_player');
     Route::get('/players/{id}', 'show')->name('show_player');
+});
+
+Route::controller(TeamsController::class)->group(function () {
+    Route::get('/teams', 'listTeams')->name('list_teams');
+    // Route::post('/players', 'create')->name('create_player');
+    // Route::get('/players/{id}', 'show')->name('show_player');
 });

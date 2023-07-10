@@ -9,13 +9,7 @@ class PlayersController extends Controller
 {
     public function index(Request $req)
     {
-        // $players = Player::all();
-        //$players = ["Paul muchurezi", "Nelson Ssenkatuuko"];
-        $players = [
-            'player1' => 'Marcus rashford',
-            'player2' => 'Mason Greenwood'
-        ];
-        // return view('welcome')->with('players', $players);
+        $players = Player::all();
         return view('players.index', ['players' => $players]);
     }
 
