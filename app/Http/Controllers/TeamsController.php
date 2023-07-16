@@ -13,4 +13,21 @@ class TeamsController extends Controller
         $teams = Team::all();
         return view('teams.index', ['teams' => $teams]);
     }
+    public function createTeam()
+    {
+
+        return view('teams.create');
+    }
+
+    public function saveTeam(Request $request)
+    {
+        $team = Team::create([
+            'name' => $request->input('teamName'),
+            'found_date' => $request->input('foundDate'),
+            'country' => $request->input('country'),
+            'city' => $request->input('city'),
+        ]);
+
+        return redirect('/teams');
+    }
 }

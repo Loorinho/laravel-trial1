@@ -21,13 +21,15 @@ Route::get('/', function () {
 
 
 Route::controller(PlayersController::class)->group(function () {
-    Route::get('/players', 'index')->name('list_players');
-    Route::post('/players', 'create')->name('create_player');
-    Route::get('/players/{id}', 'show')->name('show_player');
+    Route::get('/players', 'listPlayers')->name('list_players');
+    Route::get('/players/create', 'createPlayer')->name('create_player');
+    Route::post('/players/create', 'savePlayer')->name('save_player');
+    Route::get('/players/{id}', 'showPlayer')->name('show_player');
 });
 
 Route::controller(TeamsController::class)->group(function () {
     Route::get('/teams', 'listTeams')->name('list_teams');
-    // Route::post('/players', 'create')->name('create_player');
-    // Route::get('/players/{id}', 'show')->name('show_player');
+    Route::get('/teams/create', 'createTeam')->name('create_team');
+    Route::post('/teams/create', 'saveteam')->name('save_team');
+    Route::get('/teams/{id}', 'showTeam')->name('show_team');
 });
