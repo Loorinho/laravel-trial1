@@ -30,4 +30,26 @@ class TeamsController extends Controller
 
         return redirect('/teams');
     }
+
+    public function editTeam($id)
+    {
+
+        $team = Team::find($id);
+        return view('teams.edit')->with('team', $team);
+    }
+
+
+    public function updateTeam(Request $request, $id)
+    {
+        dd($id);
+        $team = Team::where('id', $id)
+            ->update([
+                'name' => $request->input('teamName'),
+                'found_date' => $request->input('foundDate'),
+                'country' => $request->input('country'),
+                'city' => $request->input('city'),
+            ]);
+
+        return redirect("/teams");
+    }
 }
