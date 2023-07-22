@@ -60,4 +60,11 @@ class TeamsController extends Controller
         $team->delete();
         return redirect("/teams");
     }
+
+
+    public function showTeam($id)
+    {
+        $team = Team::find($id);
+        return view("teams.show")->with('team', $team);
+    }
 }

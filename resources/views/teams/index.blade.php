@@ -8,7 +8,11 @@
    
      @forelse ($teams as $team)
      <div style="display: flex; justify-content: space-around; align-items: center"> 
-          <p >{{ $team->name }}</p>
+          <p >
+               <a href="/teams/{{ $team->id }}">
+                    {{ $team->name }}
+               </a>
+          </p>
              
           <div style="display: flex; justify-content: space-around; align-items: center ">
                <p>
@@ -23,9 +27,8 @@
                     <form action="/teams/{{ $team->id }}/" method="post">
                          @csrf 
                          @method("DELETE")
-                         {{-- <a href="/teams/{{ $team->id }}/delete"> --}}
                               <button type="submit">Delete</button>
-                         </form>
+                    </form>
                </div>
           </div>
      </div>

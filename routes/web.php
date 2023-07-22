@@ -31,7 +31,7 @@ Route::controller(TeamsController::class)->group(function () {
     Route::get('/teams', 'listTeams')->name('list_teams');
     Route::get('/teams/create', 'createTeam')->name('create_team');
     Route::post('/teams/create', 'saveteam')->name('save_team');
-    // Route::get('/teams/{id}', 'showTeam')->name('show_team');
+    Route::get('/teams/{id}', 'showTeam')->name('show_team');
     Route::put('/teams/{id}', 'updateTeam')->name('update_team');
     Route::delete('/teams/{id}', 'deleteTeam')->name('delete_team');
     Route::get('/teams/{id}/edit', 'editTeam')->name('edit_team');
