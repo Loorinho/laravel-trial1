@@ -41,7 +41,7 @@ class TeamsController extends Controller
 
     public function updateTeam(Request $request, $id)
     {
-        dd($id);
+        // dd($id);
         $team = Team::where('id', $id)
             ->update([
                 'name' => $request->input('teamName'),
@@ -50,6 +50,14 @@ class TeamsController extends Controller
                 'city' => $request->input('city'),
             ]);
 
+        return redirect("/teams");
+    }
+
+
+    public function deleteTeam($id)
+    {
+        $team = Team::find($id);
+        $team->delete();
         return redirect("/teams");
     }
 }

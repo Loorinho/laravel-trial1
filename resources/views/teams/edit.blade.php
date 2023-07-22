@@ -6,7 +6,7 @@
    <h4>Edit team page</h4>
    
 
-   <form action="/teams/{{ $team->id }}" method="POST">
+   <form action="/teams/{{ $team->id }}" method="post">
     @csrf
     @method('PUT')
  
