@@ -7,7 +7,9 @@
    <a href="{{ route('create_player') }}"><button>Create new</button></a>
    
      @foreach ($players as $player)
-         <p>{{ $player->name }}</p>
+        <a href="{{ route('show_player', ['id' => $player->id]) }}">
+            <p>{{ $player->name }}</p>
+        </a>
     @endforeach
 </div>
 

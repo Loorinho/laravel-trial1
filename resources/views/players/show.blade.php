@@ -1,15 +1,20 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Player page</title>
-</head>
-<body>
+@extends("layouts.base")
 
+
+@section("content")
+    <a href="/players" >
+        <button style="padding: 5px 10px; margin-top: 20px">Go back home</button>
+    </a>
+        
     <h3>Player page</h3>
 
-    <p>{{ $player }}</p>
-    
-</body>
-</html>
+    <p>Player's name: {{ $player->name }}</p>
+
+    <p>Player's Age: {{ $player->age }}</p>
+
+    <p>Player's club: {{ $player->club }}</p>
+
+    <p>Player's shirt number: {{ $player->shirt_number }}</p>
+
+@endsection
+     

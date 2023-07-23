@@ -15,10 +15,7 @@ class PlayersController extends Controller
 
     public function showPlayer($id)
     {
-        // $players = Player::all();
-        //$players = ["Paul muchurezi", "Nelson Ssenkatuuko"];
-        $player = 'This is a player with id ' . $id;
-        // return view('welcome')->with('players', $players);
+        $player = Player::find($id);
         return view('players.show', ['player' => $player]);
     }
 
