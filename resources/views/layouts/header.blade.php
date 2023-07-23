@@ -4,6 +4,8 @@
         <ul style="display: flex">
             <li><a href="{{ route("list_players") }}">Players</a></li>
             <li><a href="{{ route("list_teams") }}">Teams</a></li>
+            <li><a href="{{ route("list_managers") }}">Managers</a></li>
+
         </ul>
     </nav>
 </header>

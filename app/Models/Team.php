@@ -18,4 +18,9 @@ class Team extends Model
     {
         return $this->hasMany(Player::class);
     }
+
+    public function manager(): HasMany
+    {
+        return $this->hasMany(Manager::class);
+    }
 }
