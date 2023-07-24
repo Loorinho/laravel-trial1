@@ -11,7 +11,9 @@
     <p>Country: {{ $team->country }}</p>
     <p>City: {{ $team->city }}</p>
 
-    <div>
+    <p>Manager: {{ $team->manager->first_name }}</p>
+
+    {{-- <div>
         @forelse ($team->players as $player )
         <p>
             <a href="/players/{{ $player->id }}">
@@ -22,7 +24,7 @@
         @empty
             <p>No players to display</p>
         @endforelse
-    </div>
+    </div> --}}
 
 
 </div>
