@@ -13,18 +13,22 @@
 
     <p>Manager: {{ $team->manager->first_name }}</p>
 
-    {{-- <div>
-        @forelse ($team->players as $player )
-        <p>
-            <a href="/players/{{ $player->id }}">
-                {{ $player->first_name }} {{ $player->last_name }}
-            </a>
-        </p>
+    <div>
+        <p>Team players</p>
+        <ul>
+            @forelse ($team->players as $player )
             
-        @empty
+                 <li>
+                <a href="/players/{{ $player->id }}">
+                        {{ $player->name }} 
+                    </a>
+                </li>  
+            @empty
             <p>No players to display</p>
-        @endforelse
-    </div> --}}
+            @endforelse
+        </ul>
+        {{-- @endforeach --}}
+    </div>
 
 
 </div>

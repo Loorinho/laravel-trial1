@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('teams', function (Blueprint $table) {
-            $table->increments("id");
+            $table->id();
+            $table->unsignedBigInteger("manager_id");
             $table->string("name");
             $table->dateTime("found_date");
             $table->string("country");

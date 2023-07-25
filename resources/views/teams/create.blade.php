@@ -17,7 +17,7 @@
         <label for="" style="display: block; font-size: 15px; margin-top: 10px;">Found date</label>
         <input type="date" name="foundDate" placeholder="WHen was the team founded" style="border: 1px solid gray; padding: 5px 10px; border-radius: 5px">
     </div>
-      <div>
+    <div>
         <label for="" style="display: block; font-size: 15px; margin-top: 10px;">City</label>
         <input type="text" name="city" placeholder="Enter the city in which the team resides" style="border: 1px solid gray; padding: 5px 10px; border-radius: 5px">
     </div>
@@ -25,6 +25,13 @@
         <label for="" style="display: block; font-size: 15px; margin-top: 10px;">Country</label>
         <input type="text" name="country" placeholder="Enter the team's country of origin" style="border: 1px solid gray; padding: 5px 10px; border-radius: 5px">
     </div>
+
+    <label for="">Manager</label>
+     <select name="manager" id="" style="display: block; font-size: 15px; ">
+        @foreach ($managers as $manager)
+            <option value="{{ $manager->id }}">{{ $manager->first_name }} {{ $manager->last_name }}</option>     
+        @endforeach
+    </select>
 
 
     <button type="submit" style="margin-top: 10px; padding: 5px 10px; ">Create team</button>

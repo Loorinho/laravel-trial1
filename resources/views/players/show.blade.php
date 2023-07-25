@@ -12,7 +12,7 @@
 
     <p>Player's Age: {{ $player->age }}</p>
 
-    <p>Player's club: {{ $player->club }}</p>
+    <p>Player's football club: {{ $player->team->name }}</p>
 
     <p>Player's shirt number: {{ $player->shirt_number }}</p>
 

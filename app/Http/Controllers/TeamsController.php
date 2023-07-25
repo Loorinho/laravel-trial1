@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Manager;
 use App\Models\Player;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -16,13 +17,15 @@ class TeamsController extends Controller
     public function createTeam()
     {
 
-        return view('teams.create');
+        $managers = Manager::all();
+        return view('teams.create')->with("managers", $managers);
     }
 
     public function saveTeam(Request $request)
     {
         $team = Team::create([
             'name' => $request->input('teamName'),
+            'manager_id' => $request->input('manager'),
             'found_date' => $request->input('foundDate'),
             'country' => $request->input('country'),
             'city' => $request->input('city'),
@@ -64,7 +67,8 @@ class TeamsController extends Controller
 
     public function showTeam($id)
     {
-        $team = Team::find($id);
+        $team = Team::find($id)->loadMissing(["players", "manager"]);
+        // dd($team);
         return view("teams.show")->with('team', $team);
     }
 }

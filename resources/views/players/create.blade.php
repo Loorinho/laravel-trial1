@@ -17,14 +17,21 @@
         <label for="" style="display: block; font-size: 15px; margin-top: 10px;">Age</label>
         <input type="number" name="age" placeholder="Enter the player age here" style="border: 1px solid gray; padding: 5px 10px; border-radius: 5px">
     </div>
-      <div>
+      {{-- <div>
         <label for="" style="display: block; font-size: 15px; margin-top: 10px;">Club</label>
         <input type="text" name="club" placeholder="Enter the player's football club" style="border: 1px solid gray; padding: 5px 10px; border-radius: 5px">
-    </div>
+    </div> --}}
      <div>
         <label for="" style="display: block; font-size: 15px; margin-top: 10px;">Shirt number</label>
         <input type="number" name="shirtNumber" placeholder="Enter the player's shirt number" style="border: 1px solid gray; padding: 5px 10px; border-radius: 5px">
     </div>
+
+    <label for="" style="display: block; font-size: 15px; margin-top: 10px;">Football club</label>
+    <select name="club" id="" style="display: block; font-size: 15px; ">
+        @foreach ($teams as $team)
+            <option value="{{ $team->id }}">{{ $team->name }}</option>     
+        @endforeach
+    </select>
 
 
     <button type="submit" style="margin-top: 10px; padding: 5px 10px; ">Create player</button>

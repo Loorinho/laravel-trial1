@@ -12,7 +12,7 @@ class Player extends Model
 
     protected $table = "players";
 
-    protected $fillable = ['name', 'age', 'shirt_number', 'club'];
+    protected $fillable = ['name', 'age', 'shirt_number', 'club', "team_id"];
 
     public function team(): BelongsTo
     {
