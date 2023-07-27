@@ -45,3 +45,8 @@ Route::controller(ManagerController::class)->group(function () {
     // Route::post('/players/create', 'savePlayer')->name('save_player');
     // Route::get('/players/{id}', 'showPlayer')->name('show_player');
 });
+
+Route::controller(LeagueController::class)->group(function () {
+     Route::get('/leagues', 'listLeagues')->name('list_leagues');
+    Route::post('/leagues/create', 'createLeague')->name('create_league');
+});
